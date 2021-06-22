@@ -52,7 +52,7 @@ Your input:"
 
     internal InputInterface(string inputText)
     {
-      Console.WriteLine("inputText: " + inputText);
+      /*Console.WriteLine("inputText: " + inputText);*/
       string[] data = inputText.Split("#");
       if (data.Length == 6)
       {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Text.Json;
 
 namespace StoreStock
 {
@@ -13,19 +13,29 @@ namespace StoreStock
     }
     internal void AllData()
     {
+      string jsonString;
       Stock[] FetchAllData = Stock.AllStock;
+      
       foreach (Stock data in FetchAllData)
       {
-        Console.WriteLine(data.GetType());
+        ObjectConverter C = new ObjectConverter(data);
+        jsonString = JsonSerializer.Serialize(C.ConvertedObject);
+        Console.WriteLine(jsonString);
       }
     }
+
     internal void SpecificClass(string className)
     {
+      string jsonString;
       Stock[] fetchAllData = Stock.AllStock;
-      IEnumerable<Stock> filteredData = fetchAllData.Where(data => data.Type == className);
+      IEnumerable<Stock> filteredData = fetchAllData.Where(
+        data => data.Type == className);
+
       foreach (Stock data in filteredData)
       {
-        Console.WriteLine(data.GetType());
+        ObjectConverter C = new ObjectConverter(data);
+        jsonString = JsonSerializer.Serialize(C.ConvertedObject);
+        Console.WriteLine(jsonString);
       }
     }
   }

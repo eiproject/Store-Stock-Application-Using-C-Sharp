@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json;
 
 namespace StoreStock
 {
@@ -27,7 +28,7 @@ namespace StoreStock
       }
       else if (type.ToLower() == "pensil")
       {
-        Pencil newBook = new Pencil
+        Pencil newPensil = new Pencil
         {
           Type = type,
           Quantity = quantitiy,
@@ -37,7 +38,7 @@ namespace StoreStock
           PencilSize = size
         };
 
-        Stock newStock = newBook;
+        Stock newStock = newPensil;
         Stock.AddMoreStock(newStock);
       }
       else
