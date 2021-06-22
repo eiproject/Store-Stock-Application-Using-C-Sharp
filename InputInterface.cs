@@ -14,10 +14,21 @@ namespace StoreStock
 Your input:"
         );
       string userInput = Console.ReadLine();
-      InputInterface I = new InputInterface(userInput);
+      try
+      {
+        InputInterface I = new InputInterface(userInput);
+      }
+      catch
+      {
+        Console.WriteLine("Wrong input. \n");
+      }
     }
+
     internal static void ViewStock()
     {
+      int choosenNumber;
+      string userInput;
+
       Console.WriteLine(
         @"Choose data: 
 1. All data
@@ -26,8 +37,9 @@ Your input:"
 4. Pena
 Your input:"
         );
-      string userInput = Console.ReadLine();
-      int choosenNumber = int.Parse(userInput);
+      userInput = Console.ReadLine();
+      /*int choosenNumber = int.Parse(userInput);*/
+      choosenNumber = int.TryParse(userInput, out choosenNumber) ? choosenNumber : 0;
 
       ViewData V = new ViewData();
 
@@ -46,6 +58,10 @@ Your input:"
       else if (choosenNumber == 4)
       {
         V.SpecificClass("pena");
+      }
+      else
+      {
+        Console.WriteLine("Wrong input number. \n");
       }
 
     }
@@ -70,7 +86,7 @@ Your input:"
       }
       else
       {
-        Console.WriteLine("Wrong input data.");
+        Console.WriteLine("Wrong input data. \n");
       }
     }
   }  

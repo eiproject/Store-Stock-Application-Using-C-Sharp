@@ -33,7 +33,15 @@ Choose menu:";
 
       foreach (string inputData in testInput)
       {
-        InputInterface IN = new InputInterface(inputData);
+        try
+        {
+          InputInterface I = new InputInterface(inputData);
+        }
+        catch
+        {
+          Console.WriteLine("Wrong input. \n");
+        }
+          
       }
 
       while (isLoop)
@@ -41,8 +49,9 @@ Choose menu:";
         Console.WriteLine(mainMenu);
 
         string inTmp = Console.ReadLine();
-        userChoosenNumber = int.Parse(inTmp);
-        Console.WriteLine(userChoosenNumber);
+        /*userChoosenNumber = int.Parse(inTmp);*/
+        userChoosenNumber = int.TryParse(inTmp, out userChoosenNumber) ? userChoosenNumber : 0;
+        /*Console.WriteLine(userChoosenNumber);*/
 
         if (userChoosenNumber == 1)
         {
