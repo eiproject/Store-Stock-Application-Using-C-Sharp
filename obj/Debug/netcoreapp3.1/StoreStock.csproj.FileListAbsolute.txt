@@ -1,0 +1,13 @@
+C:\Lab Formulatrix\StoreStock\bin\Debug\netcoreapp3.1\StoreStock.exe
+C:\Lab Formulatrix\StoreStock\bin\Debug\netcoreapp3.1\StoreStock.deps.json
+C:\Lab Formulatrix\StoreStock\bin\Debug\netcoreapp3.1\StoreStock.runtimeconfig.json
+C:\Lab Formulatrix\StoreStock\bin\Debug\netcoreapp3.1\StoreStock.runtimeconfig.dev.json
+C:\Lab Formulatrix\StoreStock\bin\Debug\netcoreapp3.1\StoreStock.dll
+C:\Lab Formulatrix\StoreStock\bin\Debug\netcoreapp3.1\StoreStock.pdb
+C:\Lab Formulatrix\StoreStock\obj\Debug\netcoreapp3.1\StoreStock.csprojAssemblyReference.cache
+C:\Lab Formulatrix\StoreStock\obj\Debug\netcoreapp3.1\StoreStock.AssemblyInfoInputs.cache
+C:\Lab Formulatrix\StoreStock\obj\Debug\netcoreapp3.1\StoreStock.AssemblyInfo.cs
+C:\Lab Formulatrix\StoreStock\obj\Debug\netcoreapp3.1\StoreStock.csproj.CoreCompileInputs.cache
+C:\Lab Formulatrix\StoreStock\obj\Debug\netcoreapp3.1\StoreStock.dll
+C:\Lab Formulatrix\StoreStock\obj\Debug\netcoreapp3.1\StoreStock.pdb
+C:\Lab Formulatrix\StoreStock\obj\Debug\netcoreapp3.1\StoreStock.genruntimeconfig.cache

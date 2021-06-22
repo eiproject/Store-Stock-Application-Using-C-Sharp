@@ -1,0 +1,68 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace StoreStock
+{
+  class SavingInterface
+  {
+    internal static void SaveData(
+      string type, int quantitiy, decimal price,
+      string title, string genre_or_brand, string size)
+    {
+      if (type.ToLower() == "buku")
+      {
+        Book newBook = new Book
+        {
+          Type = type,
+          Quantity = quantitiy,
+          Price = price,
+          Title = title,
+          Genre = genre_or_brand,
+          PaperSize = size
+        };
+
+        Stock newStock = newBook;
+        Stock.AddMoreStock(newStock);
+      }
+      else if (type.ToLower() == "pensil")
+      {
+        Pencil newBook = new Pencil
+        {
+          Type = type,
+          Quantity = quantitiy,
+          Price = price,
+          Title = title,
+          Brand = genre_or_brand,
+          PencilSize = size
+        };
+
+        Stock newStock = newBook;
+        Stock.AddMoreStock(newStock);
+      }
+      else
+      {
+        Console.WriteLine("Failed to save data.");
+      }
+    }
+
+    internal static void SaveData(
+      string type, int quantitiy, decimal price,
+      string title, string brand, string inkColor, string linesize)
+    {
+      Pen newPen = new Pen
+      {
+        Type = type,
+        Quantity = quantitiy,
+        Price = price,
+        Title = title,
+        Brand = brand,
+        InkColor = inkColor,
+        LineSize = linesize
+      };
+
+      Stock newStock = newPen;
+      Stock.AddMoreStock(newStock);
+    }
+  }
+}
