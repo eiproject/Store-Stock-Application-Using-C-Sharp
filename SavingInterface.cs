@@ -11,7 +11,7 @@ namespace StoreStock
       string type, int quantitiy, decimal price,
       string title, string genre_or_brand, string size)
     {
-      if (type.ToLower() == "buku")
+      if (type.ToLower() == "book")
       {
         Book newBook = new Book
         {
@@ -26,7 +26,7 @@ namespace StoreStock
         Stock newStock = newBook;
         Stock.AddMoreStock(newStock);
       }
-      else if (type.ToLower() == "pensil")
+      else if (type.ToLower() == "pencil")
       {
         Pencil newPensil = new Pencil
         {

@@ -15,11 +15,11 @@ namespace StoreStock
     /* Tipe Barang = Buku, Pena, Pensil */
     internal bool isLoop = true;
     string[] testInput = new string[] {
-        "Buku#4#895000#Magic Tree House Boxed Set, Books 1-4#Dongeng#A5",
-        "Pensil#2#49800#Conte Pieree Noire#Conte#3B",
-        "Buku#1#105900#It Ends with Us#Novel#A5",
-        "Pensil#3#5400#Drawing Pencil Joyko#Joyko#2B",
-        "Pena#1#51000#Pilot Pen Mr 2 Metropolitan#Pilot#Black#0.5"
+        "Book#4#895000#Magic Tree House Boxed Set, Books 1-4#Dongeng#A5",
+        "PENcil#2#49800#Conte Pieree Noire#Conte#3B",
+        "BOOK#1#105900#It Ends with Us#Novel#A5",
+        "pencil#3#5400#Drawing Pencil Joyko#Joyko#2B",
+        "PEN#1#51000#Pilot Pen Mr 2 Metropolitan#Pilot#Black#0.5"
       };
     string mainMenu = @"Main Menu
 1. Add Stock

@@ -8,9 +8,9 @@ namespace StoreStock
     {
       Console.WriteLine(
         @"Input Format: 
-1. Buku#Jumlah#Harga#Judul#Genre#Size
-2. Pena#Jumlah#Harga#Judul#Brand#Warna Tinta#Size
-3. Pensil#Jumlah#Harga#Judul#Brand#Size
+1. Book#Stock amount#Price#Stock title#Genre#Size
+2. Pen#Stock amount#Price#Stock title#Brand#Ink color#Size
+3. Pencil#Stock amount#Price#Stock title#Brand#Size
 Your input:"
         );
       string userInput = Console.ReadLine();
@@ -32,9 +32,9 @@ Your input:"
       Console.WriteLine(
         @"Choose data: 
 1. All data
-2. Buku
-3. Pensil
-4. Pena
+2. Book
+3. Pencil
+4. Pen
 Your input:"
         );
       userInput = Console.ReadLine();
@@ -49,15 +49,15 @@ Your input:"
       }
       else if (choosenNumber == 2) 
       {
-        V.SpecificClass("buku");
+        V.SpecificClass("book");
       }
       else if (choosenNumber == 3)
       {
-        V.SpecificClass("pensil");
+        V.SpecificClass("pencil");
       }
       else if (choosenNumber == 4)
       {
-        V.SpecificClass("pena");
+        V.SpecificClass("pen");
       }
       else
       {
