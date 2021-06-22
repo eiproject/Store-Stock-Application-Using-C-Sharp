@@ -56,7 +56,7 @@ Each of these view output is on `JSON` string format.
 
 ## Conclusion
 
-Here are my training example on C#. Feel free to look into, use, or edit. If you have suggestion or some bug report to improve this application, I am really excited and on `all ears`.
+Here are my training example on C#, need 6 hours to complete this program. Feel free to look into, use, or edit. If you have suggestion or some bug report to improve this application, I am really excited and on `all ears`.
 
 
 ## Thanks ~
