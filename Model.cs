@@ -25,11 +25,12 @@ namespace StoreStock
     internal static void AddMoreStock(Stock obj)
     {
       /*Console.WriteLine(allStock.Length);*/
-      Array.Resize(ref allStock, allStock.Length + 2);
+      Array.Resize(ref allStock, allStock.Length + 1);
       allStock[allStock.Length - 1] = obj;
+      Console.WriteLine("Adding Stock Done.");
     }
 
-    internal Stock[] AllStock { get { return allStock; } }
+    internal static Stock[] AllStock { get { return allStock; } }
   }
 
   class Book : Stock

@@ -8,11 +8,12 @@ namespace StoreStock
   - simpan jumlah stock barang di array saja
   - bisa liat ada barang apa saja yang sudah diinput dan berapa jumlahnya 
    */
+
   class Run
   {
     /* Tipe Barang#Jumlah#Harga#Judul#Genre#PaperType */
     /* Tipe Barang = Buku, Pena, Pensil */
-
+    internal bool isLoop = true;
     string[] testInput = new string[] {
         "Buku#4#895000#Magic Tree House Boxed Set, Books 1-4#Dongeng#A5",
         "Pensil#2#49800#Conte Pieree Noire#Conte#3B",
@@ -29,23 +30,31 @@ Choose menu:";
 
     internal Run()
     {
+
       foreach (string inputData in testInput)
       {
         InputInterface IN = new InputInterface(inputData);
       }
-      Console.WriteLine(mainMenu);
-      string inTmp = Console.ReadLine();
-      userChoosenNumber = int.Parse(inTmp);
-      Console.WriteLine(userChoosenNumber);
-      if (userChoosenNumber == 1)
+
+      while (isLoop)
       {
-        InputInterface.AddOneStock();
-      } else if (userChoosenNumber == 2)
-      {
-        InputInterface.ViewStock();
-      } else
-      {
-        Console.WriteLine("Thanks for using Store Stock.");
+        Console.WriteLine(mainMenu);
+
+        string inTmp = Console.ReadLine();
+        userChoosenNumber = int.Parse(inTmp);
+        Console.WriteLine(userChoosenNumber);
+
+        if (userChoosenNumber == 1)
+        {
+          InputInterface.AddOneStock();
+        } else if (userChoosenNumber == 2)
+        {
+          InputInterface.ViewStock();
+        } else
+        {
+          Console.WriteLine("Thanks for using Store Stock.");
+          isLoop = false;
+        }
       }
     }
   }
