@@ -1,0 +1,9 @@
+C:\Lab Formulatrix\StoreStock\UserInterface\bin\Debug\UserInterface.exe.config
+C:\Lab Formulatrix\StoreStock\UserInterface\bin\Debug\UserInterface.exe
+C:\Lab Formulatrix\StoreStock\UserInterface\bin\Debug\UserInterface.pdb
+C:\Lab Formulatrix\StoreStock\UserInterface\obj\Debug\UserInterface.csprojAssemblyReference.cache
+C:\Lab Formulatrix\StoreStock\UserInterface\obj\Debug\UserInterface.Properties.Resources.resources
+C:\Lab Formulatrix\StoreStock\UserInterface\obj\Debug\UserInterface.csproj.GenerateResource.cache
+C:\Lab Formulatrix\StoreStock\UserInterface\obj\Debug\UserInterface.csproj.CoreCompileInputs.cache
+C:\Lab Formulatrix\StoreStock\UserInterface\obj\Debug\UserInterface.exe
+C:\Lab Formulatrix\StoreStock\UserInterface\obj\Debug\UserInterface.pdb

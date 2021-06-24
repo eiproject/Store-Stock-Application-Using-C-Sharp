@@ -7,6 +7,9 @@ namespace StoreStock
   - input barang ( inget bisa macem2 tipe barang, bikin classnya )
   - simpan jumlah stock barang di array saja
   - bisa liat ada barang apa saja yang sudah diinput dan berapa jumlahnya 
+
+   + Repository Manager
+
    */
 
   class Run
