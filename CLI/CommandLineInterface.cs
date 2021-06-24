@@ -31,7 +31,8 @@ Your input:"
         string userInput = Console.ReadLine();
         try {
           InputParser userInputObj = new InputParser(userInput);
-        } catch {
+        }
+        catch {
           Console.WriteLine("Wrong input. \n");
         }
       }
@@ -53,17 +54,21 @@ Your input:"
         /*int choosenNumber = int.Parse(userInput);*/
         choosenNumber = int.TryParse(userInput, out choosenNumber) ? choosenNumber : 0;
 
-        
+
 
         if (choosenNumber == 1) {
           ViewAllData fetchData = new ViewAllData();
-        } else if (choosenNumber == 2) {
+        }
+        else if (choosenNumber == 2) {
           ViewSpecificClass fetchData = new ViewSpecificClass("book");
-        } else if (choosenNumber == 3) {
+        }
+        else if (choosenNumber == 3) {
           ViewSpecificClass fetchData = new ViewSpecificClass("pencil");
-        } else if (choosenNumber == 4) {
+        }
+        else if (choosenNumber == 4) {
           ViewSpecificClass fetchData = new ViewSpecificClass("pen");
-        } else {
+        }
+        else {
           Console.WriteLine("Wrong input number. \n");
         }
       }
@@ -73,18 +78,20 @@ Your input:"
       internal InputParser(string inputText) {
         /*Console.WriteLine("inputText: " + inputText);*/
         string[] data = inputText.Split("#");
-        AddStock newStock= new AddStock();
+        AddStock newStock = new AddStock();
         if (data.Length == 6) {
           newStock.SaveData(
           data[0].ToLower(), int.Parse(data[1]), decimal.Parse(data[2]),
           data[3], data[4], data[5]
           );
-        } else if (data.Length == 7) {
+        }
+        else if (data.Length == 7) {
           newStock.SaveData(
           data[0].ToLower(), int.Parse(data[1]), decimal.Parse(data[2]),
           data[3], data[4], data[5], data[6]
           );
-        } else {
+        }
+        else {
           Console.WriteLine("Wrong input data. \n");
         }
       }

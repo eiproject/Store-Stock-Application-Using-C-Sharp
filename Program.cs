@@ -1,20 +1,18 @@
 ﻿using System;
 using StoreStock.CLI;
 
-namespace StoreStock
-{
-   /*
-   fitur:
-  - input barang ( inget bisa macem2 tipe barang, bikin classnya )
-  - simpan jumlah stock barang di array saja
-  - bisa liat ada barang apa saja yang sudah diinput dan berapa jumlahnya 
+namespace StoreStock {
+  /*
+  fitur:
+ - input barang ( inget bisa macem2 tipe barang, bikin classnya )
+ - simpan jumlah stock barang di array saja
+ - bisa liat ada barang apa saja yang sudah diinput dan berapa jumlahnya 
 
-   + Repository Manager
+  + Repository Manager
 
-   */
+  */
 
-  class Run
-  {
+  class Run {
     /* Tipe Barang#Jumlah#Harga#Judul#Genre#PaperType */
     /* Tipe Barang = Buku, Pena, Pensil */
     internal bool isLoop = true;
@@ -27,29 +25,24 @@ namespace StoreStock
         "pencil#3#5400#Drawing Pencil Joyko#Joyko#2B",
         "PEN#1#51000#Pilot Pen Mr 2 Metropolitan#Pilot#Black#0.5"
       };
-    string mainMenu = 
+    string mainMenu =
 @"Welcome to Main Menu
 1. Add Stock
 2. View Stock
 99. Exit
 Choose menu:";
-    internal Run()
-    {
+    internal Run() {
 
-      foreach (string inputData in testInput)
-      {
-        try
-        {
+      foreach (string inputData in testInput) {
+        try {
           CommandLineInterface.InputParser initialData = new CommandLineInterface.InputParser(inputData);
         }
-        catch
-        {
+        catch {
           Console.WriteLine("Wrong input. \n");
         }
       }
 
-      while (isLoop)
-      {
+      while (isLoop) {
         Console.WriteLine(mainMenu);
         strChoosenMainMenu = Console.ReadLine();
         userChoosenMainMenu = int.TryParse(strChoosenMainMenu, out userChoosenMainMenu) ? userChoosenMainMenu : 0;
@@ -58,10 +51,8 @@ Choose menu:";
       }
     }
   }
-  class Program
-  {
-    static void Main(string[] args)
-    {
+  class Program {
+    static void Main(string[] args) {
       Console.WriteLine("Welcome to Store Stock Application!");
       Run App = new Run();
     }

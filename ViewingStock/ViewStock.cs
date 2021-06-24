@@ -12,7 +12,7 @@ namespace StoreStock.ViewingStock {
     public object FetchedStock { get { return fetchedStock; } }
   }
 
-  class ViewAllData : ViewStock{
+  class ViewAllData : ViewStock {
     string jsonString;
     internal ViewAllData() {
       Repository repo = new Repository();
@@ -26,7 +26,7 @@ namespace StoreStock.ViewingStock {
     }
   }
 
-  class ViewSpecificClass : ViewStock{
+  class ViewSpecificClass : ViewStock {
     string jsonString;
     internal ViewSpecificClass(string className) {
       Repository repo = new Repository();

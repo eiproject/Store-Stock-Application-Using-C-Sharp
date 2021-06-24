@@ -30,6 +30,6 @@ namespace StoreStock.DatabaseModel {
       allStock.Add(obj);
     }*/
 
-    
+
   }
 }
