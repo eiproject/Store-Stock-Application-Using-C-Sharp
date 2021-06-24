@@ -11,5 +11,3 @@ C:\Lab Formulatrix\StoreStock\obj\Debug\netcoreapp3.1\StoreStock.csproj.CoreComp
 C:\Lab Formulatrix\StoreStock\obj\Debug\netcoreapp3.1\StoreStock.dll
 C:\Lab Formulatrix\StoreStock\obj\Debug\netcoreapp3.1\StoreStock.pdb
 C:\Lab Formulatrix\StoreStock\obj\Debug\netcoreapp3.1\StoreStock.genruntimeconfig.cache
-C:\Lab Formulatrix\StoreStock\obj\Debug\netcoreapp3.1\StoreStock.UserInterface.Properties.Resources.resources
-C:\Lab Formulatrix\StoreStock\obj\Debug\netcoreapp3.1\StoreStock.csproj.GenerateResource.cache

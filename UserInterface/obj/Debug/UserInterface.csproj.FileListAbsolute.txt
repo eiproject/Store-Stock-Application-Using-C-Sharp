@@ -7,3 +7,4 @@ C:\Lab Formulatrix\StoreStock\UserInterface\obj\Debug\UserInterface.csproj.Gener
 C:\Lab Formulatrix\StoreStock\UserInterface\obj\Debug\UserInterface.csproj.CoreCompileInputs.cache
 C:\Lab Formulatrix\StoreStock\UserInterface\obj\Debug\UserInterface.exe
 C:\Lab Formulatrix\StoreStock\UserInterface\obj\Debug\UserInterface.pdb
+C:\Lab Formulatrix\StoreStock\UserInterface\obj\Debug\UserInterface.Form1.resources

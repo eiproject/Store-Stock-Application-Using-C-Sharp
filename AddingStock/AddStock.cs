@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Text.Json;
+using StoreStock.DatabaseModel;
+using StoreStock.RepositoryManager;
 
-namespace StoreStock
-{
-  class SavingInterface
-  {
-    internal static void SaveData(
+namespace StoreStock.AddingStock {
+  class AddStock {
+    int currentID = Stock.countID;
+    internal void SaveData(
       string type, int quantitiy, decimal price,
-      string title, string genre_or_brand, string size)
-    {
-      if (type.ToLower() == "book")
-      {
-        Book newBook = new Book
-        {
+      string title, string genre_or_brand, string size) {
+      Stock.countID++;
+      if (type.ToLower() == "book") {
+        Book newBook = new Book {
+          id = currentID,
           type = type,
           quantity = quantitiy,
           price = price,
@@ -24,12 +23,13 @@ namespace StoreStock
         };
 
         Stock newStock = newBook;
-        Stock.AddMoreStock(newStock);
+
+        Repository repo = new Repository();
+        repo.AddMoreStock(newStock);
       }
-      else if (type.ToLower() == "pencil")
-      {
-        Pencil newPensil = new Pencil
-        {
+      else if (type.ToLower() == "pencil") {
+        Pencil newPensil = new Pencil {
+          id = currentID,
           type = type,
           quantity = quantitiy,
           price = price,
@@ -39,20 +39,21 @@ namespace StoreStock
         };
 
         Stock newStock = newPensil;
-        Stock.AddMoreStock(newStock);
+
+        Repository repo = new Repository();
+        repo.AddMoreStock(newStock);
       }
-      else
-      {
+      else {
         Console.WriteLine("Failed to save data.");
       }
     }
 
-    internal static void SaveData(
+    internal void SaveData(
       string type, int quantitiy, decimal price,
-      string title, string brand, string inkColor, string linesize)
-    {
-      Pen newPen = new Pen
-      {
+      string title, string brand, string inkColor, string linesize) {
+      Stock.countID++;
+      Pen newPen = new Pen {
+        id = currentID,
         type = type,
         quantity = quantitiy,
         price = price,
@@ -63,7 +64,9 @@ namespace StoreStock
       };
 
       Stock newStock = newPen;
-      Stock.AddMoreStock(newStock);
+      Repository repo = new Repository();
+      repo.AddMoreStock(newStock);
     }
   }
+
 }

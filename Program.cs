@@ -1,4 +1,5 @@
 ﻿using System;
+using StoreStock.CLI;
 
 namespace StoreStock
 {
@@ -17,6 +18,8 @@ namespace StoreStock
     /* Tipe Barang#Jumlah#Harga#Judul#Genre#PaperType */
     /* Tipe Barang = Buku, Pena, Pensil */
     internal bool isLoop = true;
+    int userChoosenMainMenu;
+    string strChoosenMainMenu;
     string[] testInput = new string[] {
         "Book#4#895000#Magic Tree House Boxed Set, Books 1-4#Dongeng#A5",
         "PENcil#2#49800#Conte Pieree Noire#Conte#3B",
@@ -24,13 +27,12 @@ namespace StoreStock
         "pencil#3#5400#Drawing Pencil Joyko#Joyko#2B",
         "PEN#1#51000#Pilot Pen Mr 2 Metropolitan#Pilot#Black#0.5"
       };
-    string mainMenu = @"Main Menu
+    string mainMenu = 
+@"Welcome to Main Menu
 1. Add Stock
 2. View Stock
 99. Exit
 Choose menu:";
-    int userChoosenNumber;
-
     internal Run()
     {
 
@@ -38,35 +40,21 @@ Choose menu:";
       {
         try
         {
-          InputInterface I = new InputInterface(inputData);
+          CommandLineInterface.InputParser initialData = new CommandLineInterface.InputParser(inputData);
         }
         catch
         {
           Console.WriteLine("Wrong input. \n");
         }
-          
       }
 
       while (isLoop)
       {
         Console.WriteLine(mainMenu);
-
-        string inTmp = Console.ReadLine();
-        /*userChoosenNumber = int.Parse(inTmp);*/
-        userChoosenNumber = int.TryParse(inTmp, out userChoosenNumber) ? userChoosenNumber : 0;
-        /*Console.WriteLine(userChoosenNumber);*/
-
-        if (userChoosenNumber == 1)
-        {
-          InputInterface.AddOneStock();
-        } else if (userChoosenNumber == 2)
-        {
-          InputInterface.ViewStock();
-        } else
-        {
-          Console.WriteLine("Thanks for using Store Stock.");
-          isLoop = false;
-        }
+        strChoosenMainMenu = Console.ReadLine();
+        userChoosenMainMenu = int.TryParse(strChoosenMainMenu, out userChoosenMainMenu) ? userChoosenMainMenu : 0;
+        CommandLineInterface CLI = new CommandLineInterface(userChoosenMainMenu);
+        isLoop = CLI.loopCondition;
       }
     }
   }
