@@ -19,23 +19,24 @@ namespace StoreStock {
     int userChoosenMainMenu;
     string strChoosenMainMenu;
     string[] testInput = new string[] {
-        "Book#4#895000#Magic Tree House Boxed Set, Books 1-4#Dongeng#A5",
-        "PENcil#2#49800#Conte Pieree Noire#Conte#3B",
+        "Book#10#895000#Magic Tree House Boxed Set, Books 1-4#Dongeng#A5",
+        "PENcil#21#49800#Conte Pieree Noire#Conte#3B",
         "BOOK#1#105900#It Ends with Us#Novel#A5",
         "pencil#3#5400#Drawing Pencil Joyko#Joyko#2B",
-        "PEN#1#51000#Pilot Pen Mr 2 Metropolitan#Pilot#Black#0.5"
+        "PEN#2#51000#Pilot Pen Mr 2 Metropolitan#Pilot#Black#0.5"
       };
     string mainMenu =
 @"Welcome to Main Menu
 1. Add Stock
 2. View Stock
+3. Delete Stock
 99. Exit
 Choose menu:";
     internal Run() {
 
       foreach (string inputData in testInput) {
         try {
-          CommandLineInterface.InputParser initialData = new CommandLineInterface.InputParser(inputData);
+            CommandLineInterface.InputParser initialData = new CommandLineInterface.InputParser(inputData);
         }
         catch {
           Console.WriteLine("Wrong input. \n");

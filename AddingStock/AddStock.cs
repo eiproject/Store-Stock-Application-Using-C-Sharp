@@ -8,14 +8,15 @@ namespace StoreStock.AddingStock {
   class AddStock {
     int currentID = Stock.countID;
     internal void SaveData(
-      string type, int quantitiy, decimal price,
+      string type, int quantity, decimal price,
       string title, string genre_or_brand, string size) {
       Stock.countID++;
       if (type.ToLower() == "book") {
+        Stock.countBook += quantity;
         Book newBook = new Book {
           id = currentID,
           type = type,
-          quantity = quantitiy,
+          quantity = quantity,
           price = price,
           title = title,
           genre = genre_or_brand,
@@ -28,10 +29,11 @@ namespace StoreStock.AddingStock {
         repo.AddMoreStock(newStock);
       }
       else if (type.ToLower() == "pencil") {
+        Stock.countPencil += quantity;
         Pencil newPensil = new Pencil {
           id = currentID,
           type = type,
-          quantity = quantitiy,
+          quantity = quantity,
           price = price,
           title = title,
           brand = genre_or_brand,
@@ -49,13 +51,14 @@ namespace StoreStock.AddingStock {
     }
 
     internal void SaveData(
-      string type, int quantitiy, decimal price,
+      string type, int quantity, decimal price,
       string title, string brand, string inkColor, string linesize) {
       Stock.countID++;
+      Stock.countPen += quantity;
       Pen newPen = new Pen {
         id = currentID,
         type = type,
-        quantity = quantitiy,
+        quantity = quantity,
         price = price,
         title = title,
         brand = brand,

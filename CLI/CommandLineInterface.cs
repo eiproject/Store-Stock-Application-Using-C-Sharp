@@ -5,13 +5,18 @@ using StoreStock.AddingStock;
 using StoreStock.ViewingStock;
 
 namespace StoreStock.CLI {
+  enum userSelection {
+    addStock = 1,
+    viewStock,
+    deleteStock
+  }
   class CommandLineInterface {
     internal bool loopCondition = true;
-    internal CommandLineInterface(int userChoosenNumber) {
-      if (userChoosenNumber == 1) {
+    internal CommandLineInterface(int menuSelected) {
+      if (menuSelected == (int)userSelection.addStock) {
         AddStockInterface addInterface = new AddStockInterface();
       }
-      else if (userChoosenNumber == 2) {
+      else if (menuSelected == (int)userSelection.viewStock) {
         ViewStockInterface viewInterface = new ViewStockInterface();
       }
       else {
@@ -53,8 +58,6 @@ Your input:"
         userInput = Console.ReadLine();
         /*int choosenNumber = int.Parse(userInput);*/
         choosenNumber = int.TryParse(userInput, out choosenNumber) ? choosenNumber : 0;
-
-
 
         if (choosenNumber == 1) {
           ViewAllData fetchData = new ViewAllData();
