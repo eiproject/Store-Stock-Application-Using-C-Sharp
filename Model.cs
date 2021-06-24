@@ -5,9 +5,11 @@ namespace StoreStock
 {
   class Stock
   {
-    internal string Type { get; set; }
-    public int Quantity { get; set; }
-    public decimal Price { get; set; }
+    internal string type;
+    internal int quantity;
+    internal decimal price;
+    public int Quantity { get { return quantity; } }
+    public decimal Price { get { return price; }  }
     /*internal string ObjType;*/
 
     /*static List<Stock> allStock = new List<Stock>();*/
@@ -35,23 +37,33 @@ namespace StoreStock
 
   class Book : Stock
   {
-    public string Title{ get; set; } 
-    public string Genre{ get; set; }
-    public string PaperSize{ get; set; }
+    internal string title;
+    internal string genre;
+    internal string paperSize;
+    public string Title{ get { return title; } } 
+    public string Genre{ get { return genre; } }
+    public string PaperSize{ get{ return paperSize; } }
   }
 
   class Pen : Stock
   {
-    public string Title{ get; set; }
-    public string Brand{ get; set; }
-    public string InkColor{ get; set; }
-    public string LineSize{ get; set; }
+    internal string title;
+    internal string brand;
+    internal string inkColor;
+    internal string lineSize;
+    public string Title{ get{ return title; } }
+    public string Brand{ get{ return brand; } }
+    public string InkColor{ get{ return inkColor; } }
+    public string LineSize{ get{ return lineSize; } }
   }
 
   class Pencil : Stock
   {
-    public string Title{ get; set; }
-    public string Brand{ get; set; }
-    public string PencilSize{ get; set; }
+    internal string title;
+    internal string brand;
+    internal string pencilSize;
+    public string Title{ get{ return title; } }
+    public string Brand{ get{ return brand; } }
+    public string PencilSize{ get{ return pencilSize; } }
   }
 }

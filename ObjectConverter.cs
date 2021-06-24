@@ -7,17 +7,17 @@ namespace StoreStock
     public Object ConvertedObject;
     internal ObjectConverter(Stock obj)
     {
-      if (obj.Type == "book")
+      if (obj.type == "book")
       {
         Book convertedObject = (Book)obj;
         ConvertedObject = convertedObject;
       }
-      else if (obj.Type == "pencil")
+      else if (obj.type == "pencil")
       {
         Pencil convertedObject = (Pencil)obj;
         ConvertedObject = convertedObject;
       }
-      else if (obj.Type == "pen")
+      else if (obj.type == "pen")
       {
         Pen convertedObject = (Pen)obj;
         ConvertedObject = convertedObject;

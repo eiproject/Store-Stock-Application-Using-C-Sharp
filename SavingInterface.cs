@@ -15,12 +15,12 @@ namespace StoreStock
       {
         Book newBook = new Book
         {
-          Type = type,
-          Quantity = quantitiy,
-          Price = price,
-          Title = title,
-          Genre = genre_or_brand,
-          PaperSize = size
+          type = type,
+          quantity = quantitiy,
+          price = price,
+          title = title,
+          genre = genre_or_brand,
+          paperSize = size
         };
 
         Stock newStock = newBook;
@@ -30,12 +30,12 @@ namespace StoreStock
       {
         Pencil newPensil = new Pencil
         {
-          Type = type,
-          Quantity = quantitiy,
-          Price = price,
-          Title = title,
-          Brand = genre_or_brand,
-          PencilSize = size
+          type = type,
+          quantity = quantitiy,
+          price = price,
+          title = title,
+          brand = genre_or_brand,
+          pencilSize = size
         };
 
         Stock newStock = newPensil;
@@ -53,13 +53,13 @@ namespace StoreStock
     {
       Pen newPen = new Pen
       {
-        Type = type,
-        Quantity = quantitiy,
-        Price = price,
-        Title = title,
-        Brand = brand,
-        InkColor = inkColor,
-        LineSize = linesize
+        type = type,
+        quantity = quantitiy,
+        price = price,
+        title = title,
+        brand = brand,
+        inkColor = inkColor,
+        lineSize = linesize
       };
 
       Stock newStock = newPen;

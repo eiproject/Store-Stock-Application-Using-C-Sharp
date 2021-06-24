@@ -29,7 +29,7 @@ namespace StoreStock
       string jsonString;
       Stock[] fetchAllData = Stock.AllStock;
       IEnumerable<Stock> filteredData = fetchAllData.Where(
-        data => data.Type == className);
+        data => data.type == className);
 
       foreach (Stock data in filteredData)
       {
