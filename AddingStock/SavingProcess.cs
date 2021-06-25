@@ -4,11 +4,13 @@ using System.Text;
 using StoreStock.Models;
 using StoreStock.RepositoryManager;
 
-namespace StoreStock.AddingStock {
-  class AddStock {
+namespace StoreStock.Business {
+  class SavingProcess {
     int currentID;
-    internal AddStock( Werehouse SelectedWerehouse) {
-      currentID = SelectedWerehouse.WerehouseData[-1].ID + 1;
+    Werehouse store;
+    internal SavingProcess( Werehouse theStore) {
+      currentID = theStore.WerehouseData[-1].ID + 1;
+      store = theStore;
     }
     internal void SaveData(
       string type, int quantity, decimal price,
@@ -26,7 +28,7 @@ namespace StoreStock.AddingStock {
 
         Stock newStock = newBook;
 
-        Repository repo = new Repository();
+        Repository repo = new Repository(store);
         repo.AddMoreStock(newStock);
       }
       else if (type.ToLower() == "pencil") {
@@ -42,7 +44,7 @@ namespace StoreStock.AddingStock {
 
         Stock newStock = newPensil;
 
-        Repository repo = new Repository();
+        Repository repo = new Repository(store);
         repo.AddMoreStock(newStock);
       }
       else {
@@ -53,7 +55,6 @@ namespace StoreStock.AddingStock {
     internal void SaveData(
       string type, int quantity, decimal price,
       string title, string brand, string inkColor, string linesize) {
-      Stock.countID++;
       Pen newPen = new Pen {
         id = currentID,
         type = type,
@@ -66,7 +67,7 @@ namespace StoreStock.AddingStock {
       };
 
       Stock newStock = newPen;
-      Repository repo = new Repository();
+      Repository repo = new Repository(store);
       repo.AddMoreStock(newStock);
     }
   }

@@ -5,7 +5,7 @@ using System.Text.Json;
 using StoreStock.Models;
 using StoreStock.Processing;
 
-namespace StoreStock.ViewingStock {
+namespace StoreStock.Business {
   class ViewJSON {
     List<string> jsonStrings = new List<string>();
     internal List<string> JsonStrings { get { return jsonStrings; } }

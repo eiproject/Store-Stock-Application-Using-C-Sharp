@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using StoreStock.AddingStock;
-using StoreStock.ViewingStock;
+using StoreStock.Business;
 using StoreStock.RepositoryManager;
 using StoreStock.Models;
 
 namespace StoreStock.Business {
-  
-  class CommandLineInterface{
+  class CLIMenu : CLI {
     internal bool loopCondition = true;
-    
     int menuSelected;
     string mainMenu =
 @"Welcome to Main Menu
@@ -21,11 +18,18 @@ namespace StoreStock.Business {
 99. Exit
 Choose menu:";
     string strChoosenMainMenu;
-    internal CommandLineInterface(Werehouse StoreWerehouse) {
+    internal CLIMenu(Werehouse theStore) : base(theStore) {
+
+    }
+    internal override void InterfaceMenu() {
       // Generate main manu
       Console.WriteLine(mainMenu);
       strChoosenMainMenu = Console.ReadLine();
       menuSelected = int.TryParse(strChoosenMainMenu, out menuSelected) ? menuSelected : 0;
+
+      // CLI to function 
+      CLI toFunction = new MainMenuSelection(store);
+      toFunction.InterfaceMenuSelector(menuSelected);
     }
   }
 }

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using StoreStock.Models;
 
 namespace StoreStock.Business {
-  internal class InputParser {
-    internal InputParser(string inputText) {
+  internal class StringInputParser {
+    internal StringInputParser(string inputText, Werehouse theStore) {
       /*Console.WriteLine("inputText: " + inputText);*/
       string[] data = inputText.Split("#");
-      AddStock newStock = new AddStock();
+      SavingProcess newStock = new SavingProcess(theStore);
       if (data.Length == 6) {
         newStock.SaveData(
         data[0].ToLower(), int.Parse(data[1]), decimal.Parse(data[2]),

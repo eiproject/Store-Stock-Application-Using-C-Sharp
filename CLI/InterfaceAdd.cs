@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using StoreStock.Models;
 
 namespace StoreStock.Business {
-  class AddStockInterface {
-    internal AddStockInterface() {
+  class CLIAdd : CLI {
+    internal CLIAdd(Werehouse theStore) : base(theStore) {
+      
+    }
+
+    internal override void InterfaceAdd() {
       Console.WriteLine(
 @"Input Format: 
 - Book#Stock amount#Price#Stock title#Genre#Size
@@ -14,7 +19,7 @@ Your input:"
       );
       string userInput = Console.ReadLine();
       try {
-        InputParser userInputObj = new InputParser(userInput);
+        StringInputParser userInputObj = new StringInputParser(userInput, store);
       }
       catch {
         Console.WriteLine("Wrong input. \n");

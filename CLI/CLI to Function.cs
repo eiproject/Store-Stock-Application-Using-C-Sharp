@@ -1,52 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using StoreStock.AddingStock;
-using StoreStock.ViewingStock;
+using StoreStock.Business;
 using StoreStock.RepositoryManager;
 using StoreStock.Models;
 
 namespace StoreStock.Business {
-  class BusinessFunction {
-    enum userSelection {
+  class MainMenuSelection : CLI{
+    enum UserSelection {
       addStock = 1,
       viewStock,
       deleteStock,
       sellStock,
     }
-    BusinessFunction(int menuSelected) {
+    internal MainMenuSelection(Werehouse theStore) : base(theStore) {
+
+    }
+    internal override void InterfaceMenuSelector(int menuSelected) {
       // check selected main menu
-      if (menuSelected == (int)userSelection.addStock) {
-        AddStockInterface addInterface = new AddStockInterface();
+      if (menuSelected == (int)UserSelection.addStock) {
+        /*CLIManager addInterface = new AddStockInterface();*/
+        CLI menu = new CLIAdd(store);
+        menu.InterfaceAdd();
       }
-      else if (menuSelected == (int)userSelection.viewStock) {
-        ViewStockInterface viewInterface = new ViewStockInterface();
+      else if (menuSelected == (int)UserSelection.viewStock) {
+        CLI menu = new CLIView(store);
+        menu.InterfaceView();
       }
-      else if (menuSelected == (int)userSelection.deleteStock) {
-        ViewStock All = new ViewAllData();
-
-        Console.WriteLine("Enter Specific ID to delete: ");
-        string idInput = Console.ReadLine();
-        int intIdInput = int.TryParse(idInput, out intIdInput) ? intIdInput : 0;
-        Repository del = new Repository();
-        del.DeleteStock(intIdInput);
+      else if (menuSelected == (int)UserSelection.deleteStock) {
+        CLI menu = new CLIDelete(store);
+        menu.InterfaceDelete();
       }
-      else if (menuSelected == (int)userSelection.sellStock) {
-        ViewStock All = new ViewAllData();
-
-        Console.WriteLine("Enter Specific ID to sell: ");
-        string idInput = Console.ReadLine();
-        Console.WriteLine("How many? ");
-        string amountInput = Console.ReadLine();
-        int intIdInput = int.TryParse(idInput, out intIdInput) ? intIdInput : 0;
-        int intAmountInput = int.TryParse(amountInput, out intAmountInput) ? intAmountInput : 0;
-        Repository sell = new Repository();
-        sell.SellStock(intIdInput, intAmountInput);
+      else if (menuSelected == (int)UserSelection.sellStock) {
+        CLI menu = new CLISell(store);
+        menu.InterfaceSell();
       }
       else {
         Console.WriteLine("Thanks for using Store Stock.");
-        loopCondition = false;
+        store.isRunning = false;
       }
     }
+    
   }
 }

@@ -1,41 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using StoreStock.Models;
 
 namespace StoreStock.Business {
-  class ViewStockInterface {
+  class CLIView : CLI{
     int choosenNumber;
     string userInput;
+    string menu =
+@"Choose data: 
+1. All data
+2. Book
+3. Pencil
+4. Pen
+Your input:";
     enum dataType {
       all = 1,
       book,
       pencil,
       pen
     }
-    internal ViewStockInterface() {
-      Console.WriteLine(
-@"Choose data: 
-1. All data
-2. Book
-3. Pencil
-4. Pen
-Your input:"
-        );
+    internal CLIView(Werehouse theStore) : base(theStore) {
+
+    }
+
+    internal override void InterfaceView() {
+      Console.WriteLine(menu);
       userInput = Console.ReadLine();
       /*int choosenNumber = int.Parse(userInput);*/
       choosenNumber = int.TryParse(userInput, out choosenNumber) ? choosenNumber : 0;
 
       if (choosenNumber == (int)dataType.all) {
-        ViewAllData fetchData = new ViewAllData();
+        ViewStock fetchedStock = new ViewAllStock(store);
       }
       else if (choosenNumber == (int)dataType.book) {
-        ViewSpecificClass fetchData = new ViewSpecificClass("book");
+        ViewStock fetchedStock = new ViewFilteredStock("book", store);
       }
       else if (choosenNumber == (int)dataType.pencil) {
-        ViewSpecificClass fetchData = new ViewSpecificClass("pencil");
+        ViewStock fetchedStock = new ViewFilteredStock("pencil", store);
       }
       else if (choosenNumber == (int)dataType.pen) {
-        ViewSpecificClass fetchData = new ViewSpecificClass("pen");
+        ViewStock fetchedStock = new ViewFilteredStock("pen", store);
       }
       else {
         Console.WriteLine("Wrong input number. \n");

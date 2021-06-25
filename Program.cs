@@ -1,6 +1,7 @@
 ﻿using System;
 using StoreStock.Business;
 using StoreStock.Models;
+using StoreStock.DummyData;
 
 namespace StoreStock {
   /*
@@ -16,16 +17,14 @@ namespace StoreStock {
   class Run {
     /* Tipe Barang#Jumlah#Harga#Judul#Genre#PaperType */
     /* Tipe Barang = Buku, Pena, Pensil */
-    internal bool isLoop = true;
-
-    
-
     internal Run() {
       Werehouse FormulatrixStore = new Werehouse();
 
-      while (isLoop) {
-        CommandLineInterface CLI = new CommandLineInterface(FormulatrixStore);
-        isLoop = CLI.loopCondition;
+      GenerateDummyData dummy = new GenerateDummyData(FormulatrixStore);
+
+      while (FormulatrixStore.isRunning) {
+        CLI FormulatrixInterface = new CLI(FormulatrixStore);
+        FormulatrixInterface.InterfaceMenu();
       }
     }
   }
