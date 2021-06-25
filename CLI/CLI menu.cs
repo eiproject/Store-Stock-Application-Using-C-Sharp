@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using StoreStock.Business;
-using StoreStock.RepositoryManager;
+using StoreStock.Business;
 using StoreStock.Models;
 
 namespace StoreStock.Business {

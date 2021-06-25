@@ -21,7 +21,6 @@ Your input:";
       pen
     }
     internal CLIView(Werehouse theStore) : base(theStore) {
-
     }
 
     internal override void InterfaceView() {

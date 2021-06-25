@@ -2,14 +2,22 @@
 using System.Collections.Generic;
 using System.Text;
 using StoreStock.Models;
-using StoreStock.RepositoryManager;
+using StoreStock.Business;
 
 namespace StoreStock.Business {
   class SavingProcess {
     int currentID;
+    internal List<Stock> currentStocks;
     Werehouse store;
     internal SavingProcess( Werehouse theStore) {
-      currentID = theStore.WerehouseData[-1].ID + 1;
+      currentStocks = theStore.WerehouseData;
+      if (currentStocks.Count != 0) {
+        currentID = theStore.WerehouseData[currentStocks.Count - 1].ID + 1;
+      }
+      else {
+        currentID = 0;
+      }
+      
       store = theStore;
     }
     internal void SaveData(

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using StoreStock.RepositoryManager;
+using StoreStock.Business;
 using StoreStock.Models;
 using System.Linq;
 

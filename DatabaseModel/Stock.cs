@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using StoreStock.RepositoryManager;
+using StoreStock.Business;
 
 namespace StoreStock.Models {
   class Stock : Werehouse {
@@ -39,7 +39,6 @@ namespace StoreStock.Models {
       }
     }
     public string Title { get { return title; } }
-
     
     internal Stock() {
     }

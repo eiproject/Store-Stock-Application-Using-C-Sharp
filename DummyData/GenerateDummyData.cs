@@ -4,7 +4,7 @@ using System.Text;
 using StoreStock.Business;
 using StoreStock.Models;
 
-namespace StoreStock.DummyData {
+namespace StoreStock.Business {
   class GenerateDummyData {
     string[] testInput = new string[] {
         "Book#100#895000#Magic Tree House Boxed Set, Books 1-4#Dongeng#A5",
@@ -15,12 +15,13 @@ namespace StoreStock.DummyData {
       };
     internal GenerateDummyData(Werehouse theStore) {
       foreach (string inputData in testInput) {
-        try {
+        /*try {
           StringInputParser initialData = new StringInputParser(inputData, theStore);
         }
         catch {
           Console.WriteLine("Wrong input. \n");
-        }
+        }*/
+        StringInputParser initialData = new StringInputParser(inputData, theStore);
       }
     }
   }

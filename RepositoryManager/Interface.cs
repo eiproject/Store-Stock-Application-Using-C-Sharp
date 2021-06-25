@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using StoreStock.Models;
 
-namespace StoreStock.RepositoryManager {
+namespace StoreStock.Business {
   interface IUserRepository {
     List<Stock> AllStock();
     List<Stock> FilterStocksByCategory(string category);
@@ -12,5 +12,4 @@ namespace StoreStock.RepositoryManager {
     void DeleteStock(int stockID);
     void SellStock(int stockID, int amount);
   }
-  
 }

@@ -6,7 +6,6 @@ using StoreStock.Models;
 namespace StoreStock.Business {
   class CLIAdd : CLI {
     internal CLIAdd(Werehouse theStore) : base(theStore) {
-      
     }
 
     internal override void InterfaceAdd() {

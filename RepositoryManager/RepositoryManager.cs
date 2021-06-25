@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using StoreStock.Models;
 
-namespace StoreStock.RepositoryManager {
+namespace StoreStock.Business {
   class Repository : IUserRepository {
     List<Stock> storeStock;
     Werehouse curentWerehouse;

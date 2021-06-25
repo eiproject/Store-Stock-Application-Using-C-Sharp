@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using StoreStock.Models;
 
-namespace StoreStock.Processing {
+namespace StoreStock.Business {
   class AutomaticObjectConverter {
     object convertedObject;
     public object ConvertedObject { get { return convertedObject; } }

@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using StoreStock.Models;
-using StoreStock.RepositoryManager;
+using StoreStock.Business;
 
 namespace StoreStock.Business {
   class CLISell : CLI{
     internal CLISell(Werehouse theStore) : base(theStore) {
-
     }
     internal override void InterfaceSell() {
       Console.WriteLine("Enter Specific ID to sell: ");

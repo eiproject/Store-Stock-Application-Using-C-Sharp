@@ -1,7 +1,6 @@
 ﻿using System;
 using StoreStock.Business;
 using StoreStock.Models;
-using StoreStock.DummyData;
 
 namespace StoreStock {
   /*
@@ -23,7 +22,7 @@ namespace StoreStock {
       GenerateDummyData dummy = new GenerateDummyData(FormulatrixStore);
 
       while (FormulatrixStore.isRunning) {
-        CLI FormulatrixInterface = new CLI(FormulatrixStore);
+        CLI FormulatrixInterface = new CLIMenu(FormulatrixStore);
         FormulatrixInterface.InterfaceMenu();
       }
     }
