@@ -8,3 +8,4 @@ C:\Lab Formulatrix\StoreStock\UserInterface\obj\Debug\UserInterface.csproj.CoreC
 C:\Lab Formulatrix\StoreStock\UserInterface\obj\Debug\UserInterface.exe
 C:\Lab Formulatrix\StoreStock\UserInterface\obj\Debug\UserInterface.pdb
 C:\Lab Formulatrix\StoreStock\UserInterface\obj\Debug\UserInterface.Form1.resources
+C:\Lab Formulatrix\StoreStock\UserInterface\obj\Debug\UserInterface.Form2.resources

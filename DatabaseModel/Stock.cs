@@ -5,48 +5,35 @@ using System.Text;
 using StoreStock.RepositoryManager;
 
 namespace StoreStock.DatabaseModel {
-  abstract class SpecialCase {
-    internal abstract decimal priceChange { get; set; }
+  abstract class Pricing {
+    protected abstract decimal discount { get; } // price change
   }
-  class Stock : SpecialCase {
+  class Stock : Pricing {
+    const decimal maxDiscount = 0.3m; // max discount
+    const decimal maxDiscountStock = 1000m; // max stock that get discount
+
+    // internal static data
     internal static int countID;
     internal static int countBook;
     internal static int countPen;
     internal static int countPencil;
-
     internal static List<Stock> allStock = new List<Stock>();
 
+    // internal data
     internal int id;
-    private string _type;
-
+    internal string title;
     internal int quantity;
     internal decimal price;
-    internal string type {
-      get {
-        return _type;
-      }
-      set {
-        _type = value;
-        /*if (value.ToLower() == "book") {
-          countBook += quantity;
-          Console.WriteLine($"adding book { countBook } { quantity } ");
-        }
-        else if (value.ToLower() == "pen") {
-          countPen += quantity;
-        }
-        else if (value.ToLower() == "pencil") {
-          countPencil += quantity;
-        }
-        else {
-        }*/
-      }
-    }
+    internal string type;
+
+    // All public data
     public int ID { get { return id; } }
     public string Type { get { return type; } }
     public int Quantity { get { return quantity; } }
+    public decimal Discount { get { return discount; } }
     public decimal Price {
       get {
-        int _counter = 0;
+        /*int _counter = 0;
         if (type.ToLower() == "book") {
           _counter = countBook;
         }
@@ -57,17 +44,21 @@ namespace StoreStock.DatabaseModel {
           _counter = countPencil;
         }
         else {
-        }
+        }*/
 
         /*Console.WriteLine($"priceChange { priceChange } { _counter } { type }");*/
-        return price - (price * priceChange);
+        /*Console.WriteLine(discount);*/
+        return price - discount;
       }
     }
+    public string Title { get { return title; } }
 
-    internal override decimal priceChange {
+    protected override decimal discount {
       get {
-        int _counter = 0;
-        if (type.ToLower() == "book") {
+        int _counter = quantity;
+        /*Console.WriteLine(quantity);*/
+        decimal percentage;
+        /*if (type.ToLower() == "book") {
           _counter = countBook;
         }
         else if (type.ToLower() == "pen") {
@@ -77,10 +68,10 @@ namespace StoreStock.DatabaseModel {
           _counter = countPencil;
         }
         else {
-        }
-        return Math.Min(decimal.Multiply((decimal)0.3, (decimal)_counter / 1000), (decimal)0.3);
+        }*/
+        percentage = Math.Min(decimal.Multiply(maxDiscount, _counter / maxDiscountStock), maxDiscount);
+        return decimal.Multiply(percentage, price);
       }
-      set => priceChange = value;
       /*Math.Min(
         decimal.Multiply(
           (decimal)0.3, (decimal)countID / 1000), (decimal)0.3);*/

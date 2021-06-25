@@ -3,21 +3,45 @@ using System.Collections.Generic;
 using System.Text;
 using StoreStock.AddingStock;
 using StoreStock.ViewingStock;
+using StoreStock.RepositoryManager;
 
 namespace StoreStock.CLI {
-  enum userSelection {
-    addStock = 1,
-    viewStock,
-    deleteStock
-  }
-  class CommandLineInterface {
+  
+  class CommandLineInterface{
     internal bool loopCondition = true;
+    enum userSelection {
+      addStock = 1,
+      viewStock,
+      deleteStock,
+      sellStock
+    }
     internal CommandLineInterface(int menuSelected) {
       if (menuSelected == (int)userSelection.addStock) {
         AddStockInterface addInterface = new AddStockInterface();
       }
       else if (menuSelected == (int)userSelection.viewStock) {
         ViewStockInterface viewInterface = new ViewStockInterface();
+      }
+      else if (menuSelected == (int)userSelection.deleteStock) {
+        ViewAllData All = new ViewAllData();
+
+        Console.WriteLine("Enter Specific ID to delete: ");
+        string idInput = Console.ReadLine();
+        int intIdInput = int.TryParse(idInput, out intIdInput) ? intIdInput : 0;
+        Repository del = new Repository();
+        del.DeleteStock(intIdInput);
+      }
+      else if (menuSelected == (int)userSelection.sellStock) {
+        ViewAllData All = new ViewAllData();
+
+        Console.WriteLine("Enter Specific ID to sell: ");
+        string idInput = Console.ReadLine();
+        Console.WriteLine("How many? ");
+        string amountInput = Console.ReadLine();
+        int intIdInput = int.TryParse(idInput, out intIdInput) ? intIdInput : 0;
+        int intAmountInput = int.TryParse(amountInput, out intAmountInput) ? intAmountInput : 0;
+        Repository sell = new Repository();
+        sell.SellStock(intIdInput, intAmountInput);
       }
       else {
         Console.WriteLine("Thanks for using Store Stock.");
@@ -28,9 +52,9 @@ namespace StoreStock.CLI {
       internal AddStockInterface() {
         Console.WriteLine(
 @"Input Format: 
-1. Book#Stock amount#Price#Stock title#Genre#Size
-2. Pen#Stock amount#Price#Stock title#Brand#Ink color#Size
-3. Pencil#Stock amount#Price#Stock title#Brand#Size
+- Book#Stock amount#Price#Stock title#Genre#Size
+- Pen#Stock amount#Price#Stock title#Brand#Ink color#Size
+- Pencil#Stock amount#Price#Stock title#Brand#Size
 Your input:"
         );
         string userInput = Console.ReadLine();
@@ -46,6 +70,12 @@ Your input:"
     internal class ViewStockInterface {
       int choosenNumber;
       string userInput;
+      enum dataType{
+        all=1, 
+        book,
+        pencil,
+        pen
+      }
       internal ViewStockInterface() {
         Console.WriteLine(
 @"Choose data: 
@@ -59,16 +89,16 @@ Your input:"
         /*int choosenNumber = int.Parse(userInput);*/
         choosenNumber = int.TryParse(userInput, out choosenNumber) ? choosenNumber : 0;
 
-        if (choosenNumber == 1) {
+        if (choosenNumber == (int)dataType.all) {
           ViewAllData fetchData = new ViewAllData();
         }
-        else if (choosenNumber == 2) {
+        else if (choosenNumber == (int)dataType.book) {
           ViewSpecificClass fetchData = new ViewSpecificClass("book");
         }
-        else if (choosenNumber == 3) {
+        else if (choosenNumber == (int)dataType.pencil) {
           ViewSpecificClass fetchData = new ViewSpecificClass("pencil");
         }
-        else if (choosenNumber == 4) {
+        else if (choosenNumber == (int)dataType.pen) {
           ViewSpecificClass fetchData = new ViewSpecificClass("pen");
         }
         else {
