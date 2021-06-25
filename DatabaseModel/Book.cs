@@ -12,5 +12,6 @@ namespace StoreStock.DatabaseModel {
     /*public string Title { get { return title; } }*/
     public string Genre { get { return genre; } }
     public string PaperSize { get { return paperSize; } }
+
   }
 }
