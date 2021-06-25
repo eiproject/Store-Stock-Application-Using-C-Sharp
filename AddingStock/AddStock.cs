@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using StoreStock.DatabaseModel;
+using StoreStock.Models;
 using StoreStock.RepositoryManager;
 
 namespace StoreStock.AddingStock {
   class AddStock {
-    int currentID = Stock.countID;
+    int currentID;
+    internal AddStock( Werehouse SelectedWerehouse) {
+      currentID = SelectedWerehouse.WerehouseData[-1].ID + 1;
+    }
     internal void SaveData(
       string type, int quantity, decimal price,
       string title, string genre_or_brand, string size) {
-      Stock.countID++;
       if (type.ToLower() == "book") {
-        Stock.countBook += quantity;
         Book newBook = new Book {
           id = currentID,
           type = type,
@@ -29,7 +30,6 @@ namespace StoreStock.AddingStock {
         repo.AddMoreStock(newStock);
       }
       else if (type.ToLower() == "pencil") {
-        Stock.countPencil += quantity;
         Pencil newPensil = new Pencil {
           id = currentID,
           type = type,
@@ -54,7 +54,6 @@ namespace StoreStock.AddingStock {
       string type, int quantity, decimal price,
       string title, string brand, string inkColor, string linesize) {
       Stock.countID++;
-      Stock.countPen += quantity;
       Pen newPen = new Pen {
         id = currentID,
         type = type,

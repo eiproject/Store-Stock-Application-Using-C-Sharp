@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
-using StoreStock.DatabaseModel;
+using StoreStock.Models;
 using StoreStock.Processing;
 
 namespace StoreStock.ViewingStock {

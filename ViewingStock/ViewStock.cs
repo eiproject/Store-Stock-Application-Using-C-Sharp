@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
-using StoreStock.DatabaseModel;
+using StoreStock.Models;
 using StoreStock.RepositoryManager;
 
 namespace StoreStock.ViewingStock {

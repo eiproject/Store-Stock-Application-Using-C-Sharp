@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace StoreStock.DatabaseModel {
+namespace StoreStock.Models {
   class Pencil : Stock {
     /*internal string title;*/
     internal string brand;

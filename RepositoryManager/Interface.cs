@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using StoreStock.DatabaseModel;
-using StoreStock.DatabaseModel;
+using StoreStock.Models;
+using StoreStock.Models;
 
 namespace StoreStock.RepositoryManager {
   interface IUserRepository {

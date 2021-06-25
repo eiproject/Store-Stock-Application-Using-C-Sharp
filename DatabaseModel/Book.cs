@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace StoreStock.DatabaseModel {
+namespace StoreStock.Models {
   class Book : Stock {
-    internal static int countBook;
-
     /*internal string title;*/
     internal string genre;
     internal string paperSize;

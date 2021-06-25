@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using StoreStock.DatabaseModel;
+using StoreStock.Models;
 
 namespace StoreStock.Processing {
   class AutomaticObjectConverter {
